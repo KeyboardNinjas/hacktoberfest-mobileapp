@@ -13,7 +13,9 @@ class LandingPage extends Component {
   render() {
     return (
       <ImageBackground style={styles.background}>
-        <Image source={Logo} style={styles.logo} resizeMode="contain" />
+        <View style={{backgroundColor: '#1D2C4E'}}>
+          <Image source={Logo} style={styles.logo} resizeMode="contain" />
+        </View>
         <UserDetails />
       </ImageBackground>
     );

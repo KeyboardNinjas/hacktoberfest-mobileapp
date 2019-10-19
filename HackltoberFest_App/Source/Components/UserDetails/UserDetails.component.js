@@ -4,7 +4,7 @@ import styles from './UserDetails.style';
 import ProfilePic from '../../Assets/Images/ProfilePicDemo.png';
 
 const myConstant = props => (
-  <>
+  <View style={styles.background}>
     <Text style={styles.headingText}>My Profile</Text>
     <View style={styles.profileDetails}>
       <Image
@@ -17,6 +17,6 @@ const myConstant = props => (
         <Text>4</Text>
       </Text>
     </View>
-  </>
+  </View>
 );
 export default myConstant;

@@ -1,6 +1,10 @@
 import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
+  background: {
+    backgroundColor: '#1D2C4E',
+    paddingBottom: 16,
+  },
   profilePic: {
     height: 144,
     width: 144,
