@@ -4,6 +4,7 @@ import Logo from '../../Assets/Images/HacktoberLogo.png';
 import styles from './LandingPage.style';
 import UserDetails from '../../Components/UserDetails/UserDetails.component';
 import UserPR from '../../Components/UserPR/UserPR.component';
+import BottomBar from '../../Components/BottomBar/BottomBar.component';
 import {ScrollView} from 'react-native-gesture-handler';
 
 class LandingPage extends Component {
@@ -27,8 +28,9 @@ class LandingPage extends Component {
           <UserPR />
           <UserPR />
           <UserPR />
-          <UserPR />
         </ScrollView>
+        <View style={{height: 10}} />
+        <BottomBar />
       </ImageBackground>
     );
   }
