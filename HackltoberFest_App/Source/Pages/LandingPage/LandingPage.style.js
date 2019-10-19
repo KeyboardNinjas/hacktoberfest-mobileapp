@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {BOLD_WEIGHT} from 'jest-matcher-utils';
 
 const styles = StyleSheet.create({
   background: {
@@ -7,12 +8,24 @@ const styles = StyleSheet.create({
   },
   logo: {
     alignSelf: 'center',
-    width: 200,
-    height: 200,
+    width: '90%',
+  },
+  profilePic: {
+    height: 144,
+    width: 144,
+  },
+  profileDetails: {
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+  },
+  amountOfRepos: {
+    alignSelf: 'center',
+    fontSize: 72,
   },
   headingText: {
-    fontSize: 20,
+    fontSize: 48,
     alignSelf: 'center',
+    color: '#FFFFFF',
   },
 });
 
