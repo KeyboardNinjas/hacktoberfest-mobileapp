@@ -2,6 +2,9 @@ import {StyleSheet} from 'react-native';
 import {BOLD_WEIGHT} from 'jest-matcher-utils';
 
 const styles = StyleSheet.create({
+  logoBackground: {
+    backgroundColor: '#1D2C4E',
+  },
   background: {
     backgroundColor: '#192249',
     height: '100%',
