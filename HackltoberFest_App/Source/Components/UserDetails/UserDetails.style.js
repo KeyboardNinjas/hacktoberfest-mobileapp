@@ -1,15 +1,6 @@
 import {StyleSheet} from 'react-native';
-import {BOLD_WEIGHT} from 'jest-matcher-utils';
 
 const styles = StyleSheet.create({
-  background: {
-    backgroundColor: '#192249',
-    height: '100%',
-  },
-  logo: {
-    alignSelf: 'center',
-    width: '90%',
-  },
   profilePic: {
     height: 144,
     width: 144,
