@@ -13,7 +13,7 @@ const NavStack = createStackNavigator(
     PulledRequests,
   },
   {
-    initialRouteName: 'LandingPage',
+    initialRouteName: 'PulledRequests',
     headerMode: 'none',
     defaultNavigationOptions: {
       gesturesEnabled: false,

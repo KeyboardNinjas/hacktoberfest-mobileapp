@@ -1,6 +1,10 @@
-import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import styles from './PulledRequests.style';
+import UserPR from '../../components/UserPR/UserPR.component';
+import Logo from '../../assets/Images/HacktoberLogo.png';
+import Dustbin from '../../assets/SVG/Dustbin';
+import BackArrow from '../../assets/SVG/BackArrow';
 
 class PulledRequests extends Component {
   constructor(props) {
@@ -10,10 +14,36 @@ class PulledRequests extends Component {
 
   render() {
     return (
-      <View style={styles.background}>
-        <Text style={styles.headingText}>Pull request 1</Text>
-        <Text style={styles.headingText}>Pull request 2</Text>
-        <Text style={styles.headingText}>Pull request 3</Text>
+      <View style={styles.logoBackground}>
+        <View style={styles.logoBackground}>
+          <View style={styles.header}>
+            <TouchableOpacity style={{ marginRight: 20 }}>
+              <BackArrow />
+            </TouchableOpacity>
+            <Image source={Logo} style={styles.logo} resizeMode="contain" />
+            <TouchableOpacity style={{ marginLeft: 20 }}>
+              <Dustbin />
+            </TouchableOpacity>
+          </View>
+          <Text style={styles.headingText}>USERNAME</Text>
+          <Text style={styles.headingText}>Pull Requests</Text>
+        </View>
+        <ScrollView>
+          <View style={styles.background}>
+            <UserPR />
+            <UserPR />
+            <UserPR />
+            <UserPR />
+            <UserPR />
+            <UserPR />
+            <UserPR />
+            <UserPR />
+            <UserPR />
+            <UserPR />
+            <UserPR />
+            <View style={{ height: 15 }} />
+          </View>
+        </ScrollView>
       </View>
     );
   }
