@@ -17,7 +17,7 @@ const BottomBar = props => (
       </TouchableOpacity>
     </View>
     <TouchableOpacity style={styles.catTab}>
-      <GitCats color={props.activeTab === 'catTabs' ? YELLOW : WHITE} />
+      <GitCats color={props.activeTab === 'catsTab' ? YELLOW : WHITE} />
     </TouchableOpacity>
   </View>
 );
