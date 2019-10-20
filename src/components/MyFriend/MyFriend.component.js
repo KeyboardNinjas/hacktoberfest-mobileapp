@@ -1,18 +1,21 @@
-import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Linking, Image } from 'react-native';
+import React from 'react';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import styles from './MyFriend.style';
-import FriendProfilePic from '../../assets/Images/ProfilePicDemo.png';
+import { withNavigation } from 'react-navigation';
 
-const MyFriend = ({ number, repo_name, title, url, created_at }) => (
-  <TouchableOpacity onPress={() => Linking.openURL(url)}>
+const MyFriend = ({ prs, username, userImage, navigation }) => (
+  <TouchableOpacity
+    onPress={() => navigation.navigate('PulledRequests', { username })}>
     <View style={styles.profile}>
       <View style={{ flexDirection: 'row', alignSelf: 'center' }}>
-        <Image style={styles.profilePic} source={FriendProfilePic} />
-        <Text style={styles.friendName}>Friends Name</Text>
+        <Image style={styles.profilePic} source={{ uri: userImage }} />
+        <Text style={styles.friendName}>{username}</Text>
       </View>
-      <Text style={styles.pullRequestDetails}>4/4</Text>
+      <Text style={styles.pullRequestDetails}>
+        <Text style={styles.pullRequestDone}>{(prs || []).length}</Text>/4
+      </Text>
     </View>
   </TouchableOpacity>
 );
 
-export default MyFriend;
+export default withNavigation(MyFriend);

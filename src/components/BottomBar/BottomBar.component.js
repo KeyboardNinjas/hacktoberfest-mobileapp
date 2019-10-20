@@ -31,4 +31,5 @@ const BottomBar = props => (
     </View>
   </>
 );
+
 export default withNavigation(BottomBar);

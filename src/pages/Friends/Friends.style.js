@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { FONT_FAMILY } from '../../data/consts';
 
 const styles = StyleSheet.create({
   logoBackground: {
@@ -14,7 +15,8 @@ const styles = StyleSheet.create({
     width: '90%',
   },
   headingText: {
-    fontSize: 48,
+    fontFamily: FONT_FAMILY,
+    fontSize: 35,
     alignSelf: 'center',
     color: '#FFFFFF',
   },
