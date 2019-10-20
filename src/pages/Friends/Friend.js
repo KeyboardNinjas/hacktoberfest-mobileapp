@@ -34,9 +34,12 @@ class Friends extends Component {
 
   async getUsers(refresh = false) {
     this.setState({ loading: true });
-    const usernames = JSON.parse(
-      (await AsyncStorage.getItem(PROFILES_USERNAMES)) || [],
-    );
+    let usernames = await AsyncStorage.getItem(PROFILES_USERNAMES);
+    if (usernames) {
+      usernames = JSON.parse(usernames);
+    } else {
+      usernames = [];
+    }
     if (usernames.length) {
       const users = [];
       for (let k = 0; k < usernames.length; k++) {
@@ -71,15 +74,18 @@ class Friends extends Component {
   }
 
   async addUser(username) {
+    username = `${username}`.toLowerCase();
     this.setState({ addUser: false });
-    let users = JSON.parse(
-      (await AsyncStorage.getItem(PROFILES_USERNAMES)) || [],
-    );
-    users = users.map(user => `${user}`.toLowerCase());
-    if (!users.includes(`${username}`.toLowerCase())) {
-      users.push(username);
+    let usernames = await AsyncStorage.getItem(PROFILES_USERNAMES);
+    if (usernames) {
+      usernames = JSON.parse(usernames);
+    } else {
+      usernames = [];
     }
-    await AsyncStorage.setItem(PROFILES_USERNAMES, JSON.stringify(users));
+    if (!usernames.includes(username)) {
+      usernames.push(username);
+    }
+    await AsyncStorage.setItem(PROFILES_USERNAMES, JSON.stringify(usernames));
     this.getUsers();
   }
 

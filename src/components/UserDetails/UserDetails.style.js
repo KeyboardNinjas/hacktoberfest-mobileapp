@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
-import { FONT_FAMILY } from '../../data/consts';
+import { FONT_FAMILY, WHITE, YELLOW, BLUE } from '../../data/consts';
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: '#1D2C4E',
+    backgroundColor: BLUE,
     paddingBottom: 10,
     borderBottomColor: 'rgba(0, 0, 0, 0.15)',
     borderBottomWidth: 5,
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
   profilePic: {
     height: 120,
     width: 120,
-    borderColor: '#FFFFFF',
+    borderColor: WHITE,
     borderWidth: 4,
   },
   profileDetails: {
@@ -22,11 +22,11 @@ const styles = StyleSheet.create({
   amountOfRepos: {
     alignSelf: 'center',
     fontSize: 64,
-    color: '#FFFFFF',
+    color: WHITE,
     fontFamily: FONT_FAMILY,
   },
   prs: {
-    color: '#F5F96B',
+    color: YELLOW,
     alignSelf: 'center',
     fontSize: 64,
     fontFamily: FONT_FAMILY,
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   headingText: {
     fontSize: 32,
     alignSelf: 'center',
-    color: '#FFFFFF',
+    color: WHITE,
     fontFamily: FONT_FAMILY,
   },
 });

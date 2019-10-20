@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import axios from 'axios';
 
 export const getUserData = async (username, refresh = false) => {
+  username = `${username}`.toLowerCase();
   let data = {};
   let profiles = {};
   try {
@@ -23,7 +24,7 @@ export const getUserData = async (username, refresh = false) => {
         `https://hacktoberfestchecker.jenko.me/prs?username=${username}`,
       );
       const result = rawResult.data;
-      data.username = result.username;
+      data.username = `${result.username}`.toLowerCase();
       data.prs = result.prs;
       data.userImage = result.userImage;
       profiles[username] = {

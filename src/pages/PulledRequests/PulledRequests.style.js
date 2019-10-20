@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { BLUE } from '../../data/consts';
 
 const styles = StyleSheet.create({
   header: {
@@ -8,8 +9,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logoBackground: {
-    backgroundColor: '#1D2C4E',
-    marginBottom: 10,
+    backgroundColor: BLUE,
+    borderBottomColor: 'rgba(0, 0, 0, 0.15)',
+    borderBottomWidth: 5,
+    paddingBottom: 10,
   },
   logo: {
     alignSelf: 'center',
@@ -20,6 +23,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   headingText: {
+    textTransform: 'capitalize',
     fontSize: 28,
     alignSelf: 'center',
     color: '#FFFFFF',
