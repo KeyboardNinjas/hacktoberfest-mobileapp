@@ -1,17 +1,24 @@
 import { StyleSheet } from 'react-native';
-import { FONT_FAMILY } from '../../data/consts';
+import {
+  FONT_FAMILY,
+  WHITE,
+  YELLOW,
+  BLUE,
+  LIGHT_BLUE,
+} from '../../data/consts';
 
 const styles = StyleSheet.create({
   background: {
     marginTop: 10,
     marginLeft: 7,
     marginRight: 7,
-    backgroundColor: '#1D2C4E',
+    backgroundColor: BLUE,
     paddingBottom: 16,
   },
   friendName: {
+    textTransform: 'uppercase',
     fontSize: 12,
-    color: '#92EAFF',
+    color: LIGHT_BLUE,
     marginLeft: 15,
     marginRight: 15,
     marginTop: 15,
@@ -20,7 +27,7 @@ const styles = StyleSheet.create({
   profile: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: '#1D2C4E',
+    backgroundColor: BLUE,
     marginTop: 8,
     marginLeft: 8,
     marginRight: 8,
@@ -31,7 +38,15 @@ const styles = StyleSheet.create({
   },
   pullRequestDetails: {
     fontSize: 48,
-    color: '#ffffff',
+    color: WHITE,
+    marginLeft: 15,
+    marginRight: 15,
+    fontFamily: FONT_FAMILY,
+    marginBottom: 10,
+  },
+  pullRequestDone: {
+    fontSize: 48,
+    color: YELLOW,
     marginLeft: 15,
     marginRight: 15,
     fontFamily: FONT_FAMILY,

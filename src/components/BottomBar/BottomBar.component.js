@@ -26,4 +26,5 @@ const BottomBar = props => (
     </TouchableOpacity>
   </View>
 );
+
 export default withNavigation(BottomBar);
