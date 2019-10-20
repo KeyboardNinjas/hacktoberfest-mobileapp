@@ -1,5 +1,4 @@
 //Packages
-import React from 'react';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 //Pages
@@ -14,7 +13,7 @@ const NavStack = createStackNavigator(
     PulledRequests,
   },
   {
-    initialRouteName: 'Friends',
+    initialRouteName: 'LandingPage',
     headerMode: 'none',
     defaultNavigationOptions: {
       gesturesEnabled: false,

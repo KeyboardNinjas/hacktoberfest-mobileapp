@@ -5,13 +5,13 @@ import {
   Image,
   ImageBackground,
   RefreshControl,
-  Alert,
   Modal,
   ScrollView,
   TouchableOpacity,
   TextInput,
 } from 'react-native';
 import Logo from '../../assets/Images/HacktoberLogo.png';
+import Info from '../../assets/SVG/Info';
 import styles from './LandingPage.style';
 import UserDetails from '../../components/UserDetails/UserDetails.component';
 import UserPR from '../../components/UserPR/UserPR.component';
@@ -26,6 +26,8 @@ import {
   PURPLE,
 } from '../../data/consts';
 import { getUserData } from '../../data/helpers';
+import Alert from '../../components/Alert/Alert.component';
+import ModalInput from '../../components/ModalInput/ModalInput.component';
 
 class LandingPage extends Component {
   constructor(props) {
@@ -36,7 +38,6 @@ class LandingPage extends Component {
       error: false,
       noUser: false,
       addUser: false,
-      username: '',
     };
   }
 
@@ -45,7 +46,6 @@ class LandingPage extends Component {
     const username = await AsyncStorage.getItem(MY_PROFILE_USERNAME);
     if (username) {
       const user = await getUserData(username, refresh);
-      console.log(user);
       if (user) {
         this.setState({
           user,
@@ -65,16 +65,14 @@ class LandingPage extends Component {
         loading: false,
       });
     }
-    console.log('State', this.state);
   }
 
   componentDidMount() {
     this.getUser();
   }
 
-  async setUser() {
-    const { username } = this.state;
-    this.setState({ username: '', addUser: false });
+  async setUser(username) {
+    this.setState({ addUser: false });
     await AsyncStorage.setItem(MY_PROFILE_USERNAME, username);
     this.getUser(true);
   }
@@ -95,11 +93,13 @@ class LandingPage extends Component {
                 onRefresh={() => this.getUser(true)}
               />
             }>
-            {noUser && <Text>No User Added</Text>}
+            {noUser && (
+              <Alert message="No user added, click on the + button at the bottom to add your profile!" />
+            )}
             {!noUser && !loading && (
               <>
-                {user.prs.map(pr => (
-                  <UserPR {...pr} key={pr.number} />
+                {user.prs.map((pr, idx) => (
+                  <UserPR {...pr} key={idx} />
                 ))}
               </>
             )}
@@ -110,79 +110,12 @@ class LandingPage extends Component {
             activeTab="catTab"
           />
         </ImageBackground>
-        <Modal visible={addUser} transparent animated animationType="slide">
-          <View
-            style={{
-              flex: 1,
-              backgroundColor: 'rgba(0,0,0, 0.5)',
-              alignItems: 'center',
-              justifyContent: 'center',
-              padding: 10,
-            }}>
-            <View
-              style={{
-                backgroundColor: DARK_BLUE,
-                width: '100%',
-                padding: 10,
-              }}>
-              <View>
-                <Text style={{ color: WHITE, fontFamily: FONT_FAMILY }}>
-                  Enter the username you wish to set as your profile
-                </Text>
-              </View>
-              <View>
-                <TextInput
-                  onChangeText={username => this.setState({ username })}
-                  style={{
-                    width: '100%',
-                    height: 40,
-                    color: WHITE,
-                    backgroundColor: BLUE,
-                    marginBottom: 10,
-                    marginTop: 10,
-                  }}
-                />
-                <View
-                  style={{
-                    flexDirection: 'row',
-                    display: 'flex',
-                    width: '100%',
-                    flexWrap: 'wrap',
-                  }}>
-                  <TouchableOpacity
-                    onPress={() =>
-                      this.setState({ addUser: false, username: '' })
-                    }
-                    style={{
-                      backgroundColor: BLUE,
-                      flex: 1,
-                      height: 40,
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      marginRight: 10,
-                    }}>
-                    <Text style={{ fontFamily: FONT_FAMILY, color: WHITE }}>
-                      Cancel
-                    </Text>
-                  </TouchableOpacity>
-                  <TouchableOpacity
-                    onPress={() => this.setUser()}
-                    style={{
-                      backgroundColor: PURPLE,
-                      flex: 1,
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      height: 40,
-                    }}>
-                    <Text style={{ fontFamily: FONT_FAMILY, color: WHITE }}>
-                      Continue
-                    </Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </View>
-          </View>
-        </Modal>
+        <ModalInput
+          visible={addUser}
+          message="Enter the github username you want to set as your profile"
+          onContinuePress={username => this.setUser(username)}
+          onCancelPress={() => this.setState({ addUser: false })}
+        />
       </>
     );
   }
