@@ -13,7 +13,7 @@ const NavStack = createStackNavigator(
     PulledRequests,
   },
   {
-    initialRouteName: 'Friends',
+    initialRouteName: 'LandingPage',
     headerMode: 'none',
     defaultNavigationOptions: {
       gesturesEnabled: false,
