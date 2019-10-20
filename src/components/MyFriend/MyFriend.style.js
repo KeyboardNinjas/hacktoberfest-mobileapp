@@ -33,6 +33,8 @@ const styles = StyleSheet.create({
     marginRight: 8,
   },
   profilePic: {
+    borderColor: WHITE,
+    borderWidth: 2,
     height: 60,
     width: 60,
   },

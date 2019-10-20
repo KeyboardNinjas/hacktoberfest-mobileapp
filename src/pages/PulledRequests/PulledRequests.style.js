@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native';
-import { BLUE } from '../../data/consts';
+import { BLUE, DARK_BLUE, WHITE, FONT_FAMILY } from '../../data/consts';
 
 const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     width: '100%',
     alignItems: 'center',
+    fontFamily: FONT_FAMILY,
     justifyContent: 'center',
   },
   logoBackground: {
@@ -19,14 +20,15 @@ const styles = StyleSheet.create({
     width: '70%',
   },
   background: {
-    backgroundColor: '#192249',
+    backgroundColor: DARK_BLUE,
     height: '100%',
   },
   headingText: {
     textTransform: 'capitalize',
     fontSize: 28,
     alignSelf: 'center',
-    color: '#FFFFFF',
+    color: WHITE,
+    fontFamily: FONT_FAMILY,
   },
 });
 

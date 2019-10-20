@@ -96,37 +96,38 @@ class PulledRequests extends Component {
     return (
       <>
         <View style={styles.logoBackground}>
-          <View style={styles.logoBackground}>
-            <View style={styles.header}>
-              <TouchableOpacity
-                style={{ marginRight: 20 }}
-                onPress={() => navigation.navigate('Friends')}>
-                <BackArrow />
-              </TouchableOpacity>
-              <Image source={Logo} style={styles.logo} resizeMode="contain" />
-              <TouchableOpacity
-                style={{ marginLeft: 20 }}
-                onPress={() => this.setState({ removeUserModal: true })}>
-                <Dustbin />
-              </TouchableOpacity>
-            </View>
-            <Text style={styles.headingText}>{username}</Text>
-            <Text style={styles.headingText}>Pull Requests</Text>
+          <View style={styles.header}>
+            <TouchableOpacity
+              style={{ marginRight: 20 }}
+              onPress={() => navigation.navigate('Friends')}>
+              <BackArrow />
+            </TouchableOpacity>
+            <Image source={Logo} style={styles.logo} resizeMode="contain" />
+            <TouchableOpacity
+              style={{ marginLeft: 20 }}
+              onPress={() => this.setState({ removeUserModal: true })}>
+              <Dustbin />
+            </TouchableOpacity>
           </View>
-          <ScrollView
-            style={styles.background}
-            refreshControl={
-              <RefreshControl
-                refreshing={loading}
-                onRefresh={() => this.getUser(true)}
-              />
-            }>
-            {error && (
-              <Alert message="An error occured while trying to retrieve the pull requests, please try again later" />
-            )}
-            {!loading && user && user.prs.map(pr => <UserPR {...pr} />)}
-          </ScrollView>
+          <Text style={styles.headingText}>{username}</Text>
+          <Text style={styles.headingText}>Pull Requests</Text>
         </View>
+        <ScrollView
+          scrollEnabled
+          style={styles.background}
+          refreshControl={
+            <RefreshControl
+              refreshing={loading}
+              onRefresh={() => this.getUser(true)}
+            />
+          }>
+          {error && (
+            <Alert message="An error occured while trying to retrieve the pull requests, please try again later" />
+          )}
+          {!loading &&
+            user &&
+            user.prs.map((pr, idx) => <UserPR key={idx} {...pr} />)}
+        </ScrollView>
         <ModalConfirm
           message={'Are you sure you wish to remove this user?'}
           visible={removeUserModal}
