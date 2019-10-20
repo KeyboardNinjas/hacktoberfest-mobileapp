@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
   },
   friendName: {
-    textTransform: 'uppercase',
+    textTransform: 'capitalize',
     fontSize: 12,
     color: LIGHT_BLUE,
     marginLeft: 15,
