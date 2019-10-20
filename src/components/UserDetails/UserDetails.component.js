@@ -4,7 +4,7 @@ import styles from './UserDetails.style';
 
 const UserDetails = ({ username, prs, userImage }) => (
   <View style={styles.background}>
-    <Text style={styles.headingText}>My Profile</Text>
+    <Text style={styles.headingText}>{username}</Text>
     <View style={styles.profileDetails}>
       <Image
         source={{ uri: userImage }}

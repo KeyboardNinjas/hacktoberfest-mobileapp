@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import { FONT_FAMILY } from '../../data/consts';
 
 const styles = StyleSheet.create({
