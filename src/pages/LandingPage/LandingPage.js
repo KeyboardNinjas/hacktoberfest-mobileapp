@@ -103,7 +103,7 @@ class LandingPage extends Component {
                 ))}
               </>
             )}
-            <View style={{ height: 20 }} />
+            <View style={{ height: 40 }} />
           </ScrollView>
           <BottomBar
             onAdd={() => this.setState({ addUser: true })}
