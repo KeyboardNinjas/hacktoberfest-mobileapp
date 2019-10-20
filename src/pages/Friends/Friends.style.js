@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   logoBackground: {
     backgroundColor: '#1D2C4E',
+    marginBottom: 10,
   },
   background: {
     backgroundColor: '#192249',

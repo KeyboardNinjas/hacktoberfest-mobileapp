@@ -98,7 +98,7 @@ class Friends extends Component {
             <MyFriend />
             <MyFriend />
             <MyFriend />
-            <View style={{ height: 8 }} />
+            <View style={{ height: 40 }} />
           </ScrollView>
           <BottomBar
             onAdd={() => this.setState({ addUser: true })}

@@ -10,12 +10,12 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   plusTab: {
-    backgroundColor: '#3B4A6B',
-    height: 60,
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: 50,
+    alignSelf: 'center',
+    justifyContent: 'flex-end',
+    zIndex: 100,
+    bottom: 0,
+    marginBottom: 20,
+    position: 'absolute',
   },
 });
 
