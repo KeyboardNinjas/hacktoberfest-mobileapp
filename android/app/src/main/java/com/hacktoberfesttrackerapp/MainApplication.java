@@ -1,4 +1,4 @@
-package com.hackltoberfest_app;
+package com.hacktoberfesttrackerapp;
 
 import android.app.Application;
 import android.content.Context;

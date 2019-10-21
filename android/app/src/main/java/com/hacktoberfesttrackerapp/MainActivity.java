@@ -1,4 +1,4 @@
-package com.hackltoberfest_app;
+package com.hacktoberfesttrackerapp;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "HackltoberFest_App";
+    return "HacktoberfestTracker";
   }
 }
