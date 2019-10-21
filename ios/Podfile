@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'HackltoberFest_App' do
-  # Pods for HackltoberFest_App
+target 'HacktoberfestTracker' do
+  # Pods for HacktoberfestTracker
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -36,7 +36,7 @@ target 'HackltoberFest_App' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
-  target 'HackltoberFest_AppTests' do
+  target 'HacktoberfestTrackerTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -44,10 +44,10 @@ target 'HackltoberFest_App' do
   use_native_modules!
 end
 
-target 'HackltoberFest_App-tvOS' do
-  # Pods for HackltoberFest_App-tvOS
+target 'HacktoberfestTracker-tvOS' do
+  # Pods for HacktoberfestTracker-tvOS
 
-  target 'HackltoberFest_App-tvOSTests' do
+  target 'HacktoberfestTracker-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
