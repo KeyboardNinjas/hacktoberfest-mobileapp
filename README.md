@@ -3,8 +3,7 @@
 Inspired by the [HacktoberFest Checker](https://github.com/jenkoian/hacktoberfest-checker). Keep track of all your friends hacktober progress as well as your own right on your phone! (Currently only Android supported, will add iOS support later on)
 
 # Screenshots
-![Screenshot](pr_screen.png)
-![Screenshot](homescreen.png)
+![Screenshot](pr_screen.png) ![Screenshot](homescreen.png)
 
 # Why?
 Created to keep track of all of your friends also participating in hacktober to ensure that you are ahead of them ;).And also just to be an awsome project for hacktoberfest!
